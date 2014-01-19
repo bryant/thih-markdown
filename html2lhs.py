@@ -1,6 +1,8 @@
 from textwrap import dedent
 import re
 
+UNCOMMENTED = open("_thih_ref.lhs").read()
+
 def hash_to_uline(src):
     STYLES = ["=", "=", "-", "-"]
 
@@ -23,8 +25,9 @@ def bye_dos(src): return src.replace("\r", "")
 
 def lhsify(src):
     def lhs(m):
-        code = re.sub("^", "> ", dedent(m.group(0)).strip(),
-                      flags=re.MULTILINE)
+        code = dedent(m.group(0)).strip()
+        bird = "> " if code in UNCOMMENTED else ""
+        code = re.sub("^", bird, code, flags=re.MULTILINE)
         return "\n\n```lhs\n\n" + code + "\n\n```\n\n"
 
     return re.sub(r"\n(?:(?:^[ ]{6}.*\n)+\n)+", lhs, src, flags=re.MULTILINE)
