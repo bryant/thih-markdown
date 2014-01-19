@@ -6,7 +6,7 @@ into Markdown and Literate Haskell.
 
 ## Dependencies
 
-[html2text][https://github.com/aaronsw/html2text]
+[html2text](https://github.com/aaronsw/html2text)
 
 ## Usage
 
