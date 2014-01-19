@@ -65,98 +65,32 @@ For simplicity, we present the code for our typechecker as a single Haskell modu
 
 For the most part, our choice of variable names follows the notational conventions set out in Figure 1.
 
-Description
-Symbol
-Type
+    Description         Symbol      Type
+    kind                k, ...      Kind
+    type constructor    tc, ...     Tycon
+    type variable       v, ...      Tyvar
+    -'fixed'            f, ...
+    -'generic'          g, ...
+    type                t, ...      Type
+    class               c, ...      Class
+    instance            it, ...     Inst
+    predicate           p, q, ...   Pred
+    -'deferred'         d, ...
+    -'retained'         r, ...
+    qualified type      qt, ...     QualType
+    class environment   ce, ...     ClassEnv
+    scheme              sc, ...     Scheme
+    substitution        s, ...      Subst
+    unifier             u, ...      Subst
+    assumption          a, ...      Assump
+    identifier          i, ...      Id
+    literal             l, ...      Literal
+    pattern             pat, ...    Pat
+    expression          e, f, ...   Expr
+    alternative         alt, ...    Alt
+    binding group       bg, ...     BindGroup
 
-kind
-`k, ...`
-`Kind`
-
-type constructor
-`tc, ...`
-`Tycon`
-
-type variable
-`v, ...`
-`Tyvar`
-
-\- `fixed'
-`f, ...`
-
-\- `generic'
-`g, ...`
-
-type
-`t, ...`
-`Type`
-
-class
-`c, ...`
-`Class`
-
-instance
-`it, ...`
-`Inst`
-
-predicate
-`p, q, ...`
-`Pred`
-
-\- `deferred'
-`d, ...`
-
-\- `retained'
-`r, ...`
-
-qualified type
-`qt, ...`
-`QualType`
-
-class environment
-`ce, ...`
-`ClassEnv`
-
-scheme
-`sc, ...`
-`Scheme`
-
-substitution
-`s, ...`
-`Subst`
-
-unifier
-`u, ...`
-`Subst`
-
-assumption
-`a, ...`
-`Assump`
-
-identifier
-`i, ...`
-`Id`
-
-literal
-`l, ...`
-`Literal`
-
-pattern
-`pat, ...`
-`Pat`
-
-expression
-`e, f, ...`
-`Expr`
-
-alternative
-`alt, ...`
-`Alt`
-
-binding group
-`bg, ...`
-`BindGroup`
-Figure 1: Notational Conventions
+        Figure 1: Notational Conventions
 
 A trailing `s` on a variable name usually indicates a list. Numeric suffices or primes are used as further decoration where necessary. For example, we use `k` or `k'` for a kind, and `ks` or `ks'` for a list of kinds. The types and terms appearing in the table are described more fully in later sections. To distinguish the code for the typechecker from program fragments that are used to discuss its behavior, we typeset the former in an `italic` font, and the latter in a `typewriter` font.
 
