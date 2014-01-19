@@ -58,8 +58,8 @@ For simplicity, we present the code for our typechecker as a single Haskell modu
 ```lhs
 
 > module TypingHaskellInHaskell where
-> import List(nub, (\\), intersect, union, partition)
-> import Monad(msum)
+> import Data.List (nub, (\\), intersect, union, partition)
+> import Control.Monad (msum)
 
 ```
 
