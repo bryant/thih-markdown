@@ -15,6 +15,9 @@ $ wget -O thih.html http://web.cecs.pdx.edu/~mpj/thih/TypingHaskellInHaskell.htm
 $ python html2lhs.py < thih.html > thih.lhs
 ```
 
+Or jump directly to https://github.com/bryant/thih-markdown/blob/master/thih.lhs
+.
+
 ## Caveats
 
 Windows-1252.
